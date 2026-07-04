@@ -2,22 +2,26 @@
 
 import { useEffect, useState } from "react";
 
+const COUNT_KEY = "ew_visitor_counted_at";
+const ONE_DAY = 24 * 60 * 60 * 1000;
+
 export default function Stats() {
   const [visitors, setVisitors] = useState<number | null>(null);
 
   useEffect(() => {
     async function loadVisitors() {
       try {
-        const alreadyCounted = window.localStorage.getItem("ew_visitor_counted");
+        const lastCounted = Number(window.localStorage.getItem(COUNT_KEY) || 0);
+        const shouldCount = !lastCounted || Date.now() - lastCounted > ONE_DAY;
 
         const response = await fetch("/.netlify/functions/visitor-stats", {
-          method: alreadyCounted ? "GET" : "POST",
+          method: shouldCount ? "POST" : "GET",
         });
 
         const data = await response.json();
 
-        if (!alreadyCounted) {
-          window.localStorage.setItem("ew_visitor_counted", "true");
+        if (shouldCount) {
+          window.localStorage.setItem(COUNT_KEY, String(Date.now()));
         }
 
         setVisitors(Number(data.visitors || 0));
@@ -36,7 +40,7 @@ export default function Stats() {
           <p className="text-4xl font-semibold text-[#d4af37]">
             {visitors === null ? "Live" : visitors.toLocaleString("de-CH") + "+"}
           </p>
-          <p className="mt-3 text-white/55">Besucher auf dieser Seite</p>
+          <p className="mt-3 text-white/55">Besucher insgesamt</p>
         </div>
 
         <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8">
