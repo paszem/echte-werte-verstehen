@@ -1,50 +1,76 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
-type Model = "short" | "long";
+type Model = "discount" | "monthly";
 
-const prices: Record<string, number> = {
-  "1": 137.41,
-  "2": 255.6,
-  "5": 603,
-  "10": 1193.99,
-  "20": 2375.96,
-  "50": 5874.12,
-  "100": 11724.43,
+type PriceResponse = {
+  pricesChf: Record<string, number>;
+  eurToChf: number;
+  updatedAt: string;
 };
 
-function eur(value: number) {
+const fallbackPricesChf: Record<string, number> = {
+  "1": 130.67,
+  "2": 243.02,
+  "5": 573.62,
+  "10": 1135.43,
+  "20": 2259.37,
+  "50": 5586.89,
+  "100": 11151.1,
+};
+
+function chf(value: number) {
   return (
-    value.toLocaleString("de-DE", {
+    value.toLocaleString("de-CH", {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
-    }) + " €"
+    }) + " CHF"
   );
 }
 
 export default function Calculator() {
-  const [model, setModel] = useState<Model>("short");
+  const [model, setModel] = useState<Model>("discount");
   const [grams, setGrams] = useState("1");
+  const [prices, setPrices] = useState(fallbackPricesChf);
+  const [isLive, setIsLive] = useState(false);
+  const [eurToChf, setEurToChf] = useState<number | null>(null);
+
+  useEffect(() => {
+    async function loadPrices() {
+      try {
+        const response = await fetch("/.netlify/functions/tgi-prices");
+        if (!response.ok) throw new Error("Keine Live-Daten");
+
+        const data = (await response.json()) as PriceResponse;
+        setPrices(data.pricesChf);
+        setEurToChf(data.eurToChf);
+        setIsLive(true);
+      } catch {
+        setIsLive(false);
+      }
+    }
+
+    loadPrices();
+  }, []);
 
   const price = prices[grams];
 
   const result = useMemo(() => {
-    if (model === "short") {
+    if (model === "discount") {
       const advantage = price * 0.07;
 
       return {
-        label: "Kurzfristiges Beispiel",
-        description:
-          "Ein Beispiel, um den direkten Preisvorteil besser einordnen zu können.",
+        label: "7 %-Modell",
+        description: "Beispiel mit direktem Preisvorteil.",
         rows: [
-          ["Preisbeispiel", eur(price)],
-          ["Preisvorteil", eur(advantage)],
-          ["Beispiel-Kaufpreis", eur(price - advantage)],
-          ["Laufzeit", "2 Monate"],
+          ["Grundpreis", chf(price)],
+          ["7 % Preisvorteil", chf(advantage)],
+          ["Beispiel-Kaufpreis", chf(price - advantage)],
+          ["Laufzeit", "Kurzfristiges Modell"],
         ],
-        totalLabel: "Beispielhafter Vorteil",
-        total: eur(advantage),
+        totalLabel: "Direkter Vorteil im Beispiel",
+        total: chf(advantage),
       };
     }
 
@@ -53,17 +79,16 @@ export default function Calculator() {
     const loyalty = price * 0.36;
 
     return {
-      label: "Langfristiges Beispiel",
-      description:
-        "Ein Beispiel, um den Aufbau über eine längere Laufzeit besser zu verstehen.",
+      label: "2 %-Modell",
+      description: "Beispiel mit monatlichen Vorteilen auf Basis des Grundpreises.",
       rows: [
-        ["Preisbeispiel", eur(price)],
-        ["Monatlicher Vorteil", eur(monthly)],
-        ["36 Monate", eur(totalMonthly)],
-        ["Treuerabatt", eur(loyalty)],
+        ["Grundpreis", chf(price)],
+        ["2 % pro Monat", chf(monthly)],
+        ["36 Monate gesamt", chf(totalMonthly)],
+        ["Treuerabatt", chf(loyalty)],
       ],
-      totalLabel: "Beispielhafter Gesamtvorteil",
-      total: eur(totalMonthly + loyalty),
+      totalLabel: "Gesamtvorteil im Beispiel",
+      total: chf(totalMonthly + loyalty),
     };
   }, [model, price]);
 
@@ -76,23 +101,31 @@ export default function Calculator() {
           </p>
 
           <h2 className="mt-5 text-4xl font-bold leading-tight md:text-6xl">
-            Zahlen machen es greifbar.
+            Modelle einfach vergleichen.
           </h2>
 
           <p className="mt-7 text-lg leading-8 text-white/60">
-            Der Rechner zeigt einfache Beispiele. Er soll helfen, verschiedene
-            Möglichkeiten besser zu verstehen und ein Gefühl für die Zahlen zu
-            bekommen.
+            Wähle eine Grösse und ein Modell. Die Werte werden in Schweizer
+            Franken angezeigt.
           </p>
 
           <div className="mt-10 rounded-3xl border border-white/10 bg-white/[0.03] p-6">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
-              Wichtig
+              {isLive ? "Live-Daten aktiv" : "Hinweis"}
             </p>
+
             <p className="mt-4 leading-7 text-white/55">
               Die Berechnung ist eine vereinfachte Darstellung und keine Finanz-
               oder Anlageberatung. Entscheidend sind immer die gültigen
               Produktbedingungen.
+            </p>
+
+            <p className="mt-4 text-sm leading-6 text-white/40">
+              {isLive && eurToChf
+                ? `TGI-Grundpreise automatisch geladen · 1 EUR = ${eurToChf.toFixed(
+                    4
+                  )} CHF`
+                : "Falls Live-Daten kurz nicht erreichbar sind, werden Beispielwerte angezeigt."}
             </p>
           </div>
         </div>
@@ -100,36 +133,36 @@ export default function Calculator() {
         <div className="rounded-[2.4rem] border border-[#d4af37]/20 bg-white/[0.045] p-7 shadow-[0_40px_120px_rgba(0,0,0,0.65)] backdrop-blur-2xl">
           <div className="grid gap-4 sm:grid-cols-2">
             <button
-              onClick={() => setModel("short")}
+              onClick={() => setModel("discount")}
               className={`rounded-3xl border p-6 text-left transition ${
-                model === "short"
+                model === "discount"
                   ? "border-[#d4af37] bg-[#d4af37]/10 shadow-[0_0_50px_rgba(212,175,55,0.12)]"
                   : "border-white/10 bg-black/25 hover:border-white/20"
               }`}
             >
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
-                Kurzfristig
+                7 %-Modell
               </p>
-              <h3 className="mt-3 text-2xl font-semibold">Preisvorteil</h3>
+              <h3 className="mt-3 text-2xl font-semibold">Direkter Vorteil</h3>
               <p className="mt-3 leading-7 text-white/50">
-                Direkten Vorteil als Beispiel ansehen.
+                Beispiel mit sofortigem Preisvorteil.
               </p>
             </button>
 
             <button
-              onClick={() => setModel("long")}
+              onClick={() => setModel("monthly")}
               className={`rounded-3xl border p-6 text-left transition ${
-                model === "long"
+                model === "monthly"
                   ? "border-[#d4af37] bg-[#d4af37]/10 shadow-[0_0_50px_rgba(212,175,55,0.12)]"
                   : "border-white/10 bg-black/25 hover:border-white/20"
               }`}
             >
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
-                Langfristig
+                2 %-Modell
               </p>
-              <h3 className="mt-3 text-2xl font-semibold">Aufbau verstehen</h3>
+              <h3 className="mt-3 text-2xl font-semibold">Monatlich</h3>
               <p className="mt-3 leading-7 text-white/50">
-                Beispiel über eine längere Laufzeit ansehen.
+                Beispiel mit monatlichen Vorteilen.
               </p>
             </button>
           </div>
@@ -158,7 +191,7 @@ export default function Calculator() {
                 Auswahl
               </p>
               <p className="mt-4 text-3xl font-semibold text-[#d4af37]">
-                {grams} g
+                {grams} g Gold
               </p>
               <p className="mt-2 text-white/50">{result.label}</p>
             </div>
