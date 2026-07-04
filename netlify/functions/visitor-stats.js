@@ -1,4 +1,4 @@
-const TOTAL_KEY = "echte-werte:visitors:total";
+const TOTAL_KEY = "echte-werte-visitors-total";
 const DAY_SECONDS = 60 * 60 * 24;
 
 async function redis(command) {
@@ -17,24 +17,21 @@ async function redis(command) {
 
 exports.handler = async function (event) {
   try {
-    const visitorId =
+    const ip =
       event.headers["x-nf-client-connection-ip"] ||
-      event.headers["client-ip"] ||
       event.headers["x-forwarded-for"] ||
       "unknown";
 
-    const browser =
-      event.headers["user-agent"] || "unknown";
+    const userAgent = event.headers["user-agent"] || "unknown";
 
-    const uniqueKey = `echte-werte:visitor:${Buffer.from(
-      visitorId + browser
-    ).toString("base64")}`;
+    const rawKey = `echte-werte-visitor-${ip}-${userAgent}`;
+    const safeKey = encodeURIComponent(rawKey);
 
     if (event.httpMethod === "POST") {
-      const exists = await redis(`get/${uniqueKey}`);
+      const exists = await redis(`get/${safeKey}`);
 
       if (!exists.result) {
-        await redis(`set/${uniqueKey}/1/EX/${DAY_SECONDS}`);
+        await redis(`set/${safeKey}/1/EX/${DAY_SECONDS}`);
         await redis(`incr/${TOTAL_KEY}`);
       }
     }
@@ -48,11 +45,14 @@ exports.handler = async function (event) {
         visitors: Number(total.result || 0),
       }),
     };
-  } catch {
+  } catch (error) {
     return {
       statusCode: 200,
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ visitors: 0 }),
+      body: JSON.stringify({
+        visitors: 0,
+        error: error instanceof Error ? error.message : "unknown",
+      }),
     };
   }
 };
