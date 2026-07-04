@@ -35,9 +35,8 @@ export default function Calculator() {
 
       return {
         label: "Kurzfristiges Beispiel",
-        eyebrow: "Preisvorteil verstehen",
         description:
-          "Ein einfaches Beispiel, um einen direkten Preisvorteil besser einordnen zu können.",
+          "Ein Beispiel, um den direkten Preisvorteil besser einordnen zu können.",
         rows: [
           ["Preisbeispiel", eur(price)],
           ["Preisvorteil", eur(advantage)],
@@ -55,9 +54,8 @@ export default function Calculator() {
 
     return {
       label: "Langfristiges Beispiel",
-      eyebrow: "Aufbau verstehen",
       description:
-        "Ein einfaches Beispiel, um den Aufbau über eine längere Laufzeit besser zu verstehen.",
+        "Ein Beispiel, um den Aufbau über eine längere Laufzeit besser zu verstehen.",
       rows: [
         ["Preisbeispiel", eur(price)],
         ["Monatlicher Vorteil", eur(monthly)],
@@ -70,27 +68,26 @@ export default function Calculator() {
   }, [model, price]);
 
   return (
-    <section id="rechner" className="mx-auto max-w-7xl px-6 py-32">
-      <div className="grid gap-14 lg:grid-cols-[0.78fr_1.22fr]">
+    <section id="rechner" className="mx-auto max-w-7xl px-6 py-28">
+      <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr]">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#d4af37]">
             Rechner
           </p>
 
           <h2 className="mt-5 text-4xl font-bold leading-tight md:text-6xl">
-            Verstehen statt
-            <br />
-            vermuten.
+            Zahlen machen es greifbar.
           </h2>
 
-          <p className="mt-7 max-w-xl text-lg leading-8 text-white/60">
-            Zahlen helfen, verschiedene Möglichkeiten besser einzuordnen.
-            Einfach auswählen, vergleichen und in Ruhe verstehen.
+          <p className="mt-7 text-lg leading-8 text-white/60">
+            Der Rechner zeigt einfache Beispiele. Er soll helfen, verschiedene
+            Möglichkeiten besser zu verstehen und ein Gefühl für die Zahlen zu
+            bekommen.
           </p>
 
-          <div className="mt-10 rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 shadow-[0_30px_90px_rgba(0,0,0,0.35)]">
+          <div className="mt-10 rounded-3xl border border-white/10 bg-white/[0.03] p-6">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
-              Hinweis
+              Wichtig
             </p>
             <p className="mt-4 leading-7 text-white/55">
               Die Berechnung ist eine vereinfachte Darstellung und keine Finanz-
@@ -100,119 +97,101 @@ export default function Calculator() {
           </div>
         </div>
 
-        <div className="relative">
-          <div className="absolute inset-0 rounded-[2.8rem] bg-[#d4af37]/10 blur-3xl" />
-
-          <div className="relative rounded-[2.4rem] border border-[#d4af37]/20 bg-white/[0.045] p-7 shadow-[0_45px_140px_rgba(0,0,0,0.75)] backdrop-blur-2xl">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <button
-                onClick={() => setModel("short")}
-                className={`rounded-3xl border p-6 text-left transition ${
-                  model === "short"
-                    ? "border-[#d4af37] bg-[#d4af37]/10 shadow-[0_0_65px_rgba(212,175,55,0.16)]"
-                    : "border-white/10 bg-black/25 hover:border-white/25 hover:bg-white/[0.035]"
-                }`}
-              >
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
-                  Kurzfristig
-                </p>
-                <h3 className="mt-3 text-2xl font-semibold">Preisvorteil</h3>
-                <p className="mt-3 leading-7 text-white/50">
-                  Direkten Vorteil als Beispiel ansehen.
-                </p>
-              </button>
-
-              <button
-                onClick={() => setModel("long")}
-                className={`rounded-3xl border p-6 text-left transition ${
-                  model === "long"
-                    ? "border-[#d4af37] bg-[#d4af37]/10 shadow-[0_0_65px_rgba(212,175,55,0.16)]"
-                    : "border-white/10 bg-black/25 hover:border-white/25 hover:bg-white/[0.035]"
-                }`}
-              >
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
-                  Langfristig
-                </p>
-                <h3 className="mt-3 text-2xl font-semibold">Aufbau verstehen</h3>
-                <p className="mt-3 leading-7 text-white/50">
-                  Beispiel über eine längere Laufzeit ansehen.
-                </p>
-              </button>
-            </div>
-
-            <div className="mt-8 grid gap-5 sm:grid-cols-[0.75fr_1.25fr]">
-              <div className="rounded-3xl border border-white/10 bg-black/30 p-5">
-                <label className="block text-sm font-semibold uppercase tracking-[0.25em] text-white/45">
-                  Grösse
-                </label>
-
-                <select
-                  value={grams}
-                  onChange={(event) => setGrams(event.target.value)}
-                  className="mt-4 w-full rounded-2xl border border-white/10 bg-black/60 px-5 py-4 text-white outline-none transition hover:border-[#d4af37]/40"
-                >
-                  {Object.keys(prices).map((gram) => (
-                    <option key={gram} value={gram}>
-                      {gram} g
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="rounded-3xl border border-white/10 bg-black/30 p-5">
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-white/45">
-                  Auswahl
-                </p>
-
-                <p className="mt-4 text-5xl font-bold tracking-tight text-[#d4af37]">
-                  {grams} g
-                  <span className="ml-2 text-2xl font-semibold text-white/70">
-                    Gold
-                  </span>
-                </p>
-
-                <p className="mt-3 text-white/50">{result.label}</p>
-              </div>
-            </div>
-
-            <div className="mt-8 rounded-3xl border border-white/10 bg-black/30 p-6">
+        <div className="rounded-[2.4rem] border border-[#d4af37]/20 bg-white/[0.045] p-7 shadow-[0_40px_120px_rgba(0,0,0,0.65)] backdrop-blur-2xl">
+          <div className="grid gap-4 sm:grid-cols-2">
+            <button
+              onClick={() => setModel("short")}
+              className={`rounded-3xl border p-6 text-left transition ${
+                model === "short"
+                  ? "border-[#d4af37] bg-[#d4af37]/10 shadow-[0_0_50px_rgba(212,175,55,0.12)]"
+                  : "border-white/10 bg-black/25 hover:border-white/20"
+              }`}
+            >
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
-                {result.eyebrow}
+                Kurzfristig
               </p>
-
-              <h3 className="mt-3 text-2xl font-semibold">{result.label}</h3>
-
-              <p className="mt-3 leading-7 text-white/55">
-                {result.description}
+              <h3 className="mt-3 text-2xl font-semibold">Preisvorteil</h3>
+              <p className="mt-3 leading-7 text-white/50">
+                Direkten Vorteil als Beispiel ansehen.
               </p>
+            </button>
 
-              <div className="mt-7 space-y-4">
-                {result.rows.map(([label, value]) => (
-                  <div
-                    key={label}
-                    className="flex items-center justify-between border-b border-white/10 pb-4 text-white/60"
-                  >
-                    <span>{label}</span>
-                    <strong className="text-white">{value}</strong>
-                  </div>
+            <button
+              onClick={() => setModel("long")}
+              className={`rounded-3xl border p-6 text-left transition ${
+                model === "long"
+                  ? "border-[#d4af37] bg-[#d4af37]/10 shadow-[0_0_50px_rgba(212,175,55,0.12)]"
+                  : "border-white/10 bg-black/25 hover:border-white/20"
+              }`}
+            >
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
+                Langfristig
+              </p>
+              <h3 className="mt-3 text-2xl font-semibold">Aufbau verstehen</h3>
+              <p className="mt-3 leading-7 text-white/50">
+                Beispiel über eine längere Laufzeit ansehen.
+              </p>
+            </button>
+          </div>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-[0.8fr_1.2fr]">
+            <div className="rounded-3xl border border-white/10 bg-black/25 p-5">
+              <label className="block text-sm font-semibold uppercase tracking-[0.25em] text-white/45">
+                Grösse
+              </label>
+
+              <select
+                value={grams}
+                onChange={(event) => setGrams(event.target.value)}
+                className="mt-4 w-full rounded-2xl border border-white/10 bg-black/50 px-5 py-4 text-white outline-none"
+              >
+                {Object.keys(prices).map((gram) => (
+                  <option key={gram} value={gram}>
+                    {gram} g
+                  </option>
                 ))}
-              </div>
+              </select>
             </div>
 
-            <div className="mt-8 rounded-[2rem] border border-[#d4af37]/30 bg-[#d4af37]/10 p-7 shadow-[0_0_80px_rgba(212,175,55,0.14)]">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
-                {result.totalLabel}
+            <div className="rounded-3xl border border-white/10 bg-black/25 p-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-white/45">
+                Auswahl
               </p>
-
-              <p className="mt-4 text-5xl font-bold tracking-tight text-white md:text-6xl">
-                {result.total}
+              <p className="mt-4 text-3xl font-semibold text-[#d4af37]">
+                {grams} g
               </p>
-
-              <p className="mt-4 leading-7 text-white/50">
-                Dieses Ergebnis dient als Orientierung und ersetzt keine Prüfung
-                der genauen Bedingungen.
-              </p>
+              <p className="mt-2 text-white/50">{result.label}</p>
             </div>
+          </div>
+
+          <div className="mt-8 rounded-3xl border border-white/10 bg-black/25 p-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
+              {result.label}
+            </p>
+            <p className="mt-3 leading-7 text-white/55">
+              {result.description}
+            </p>
+
+            <div className="mt-7 space-y-4">
+              {result.rows.map(([label, value]) => (
+                <div
+                  key={label}
+                  className="flex items-center justify-between border-b border-white/10 pb-4 text-white/60"
+                >
+                  <span>{label}</span>
+                  <strong className="text-white">{value}</strong>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8 rounded-[2rem] border border-[#d4af37]/30 bg-[#d4af37]/10 p-7">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
+              {result.totalLabel}
+            </p>
+            <p className="mt-4 text-5xl font-bold tracking-tight text-white">
+              {result.total}
+            </p>
           </div>
         </div>
       </div>
