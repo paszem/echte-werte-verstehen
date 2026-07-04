@@ -2,35 +2,30 @@
 
 import { useEffect, useState } from "react";
 
-const COUNT_KEY = "ew_visitor_counted_at";
-const ONE_DAY = 24 * 60 * 60 * 1000;
-
 export default function Stats() {
   const [visitors, setVisitors] = useState<number | null>(null);
 
-  useEffect(() => {
-    async function loadVisitors() {
-      try {
-        const lastCounted = Number(window.localStorage.getItem(COUNT_KEY) || 0);
-        const shouldCount = !lastCounted || Date.now() - lastCounted > ONE_DAY;
+  async function loadVisitors(method: "GET" | "POST") {
+    try {
+      const response = await fetch("/.netlify/functions/visitor-stats", {
+        method,
+      });
 
-        const response = await fetch("/.netlify/functions/visitor-stats", {
-          method: shouldCount ? "POST" : "GET",
-        });
-
-        const data = await response.json();
-
-        if (shouldCount) {
-          window.localStorage.setItem(COUNT_KEY, String(Date.now()));
-        }
-
-        setVisitors(Number(data.visitors || 0));
-      } catch {
-        setVisitors(null);
-      }
+      const data = await response.json();
+      setVisitors(Number(data.visitors || 0));
+    } catch {
+      setVisitors(null);
     }
+  }
 
-    loadVisitors();
+  useEffect(() => {
+    loadVisitors("POST");
+
+    const interval = window.setInterval(() => {
+      loadVisitors("GET");
+    }, 30000);
+
+    return () => window.clearInterval(interval);
   }, []);
 
   return (
@@ -38,7 +33,9 @@ export default function Stats() {
       <div className="grid gap-5 md:grid-cols-3">
         <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8">
           <p className="text-4xl font-semibold text-[#d4af37]">
-            {visitors === null ? "Live" : visitors.toLocaleString("de-CH") + "+"}
+            {visitors === null
+              ? "Live"
+              : visitors.toLocaleString("de-CH") + "+"}
           </p>
           <p className="mt-3 text-white/55">Besucher insgesamt</p>
         </div>
