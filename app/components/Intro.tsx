@@ -1,8 +1,8 @@
 export default function Intro() {
   const options = [
-    "physisches Gold kaufen",
-    "je nach Modell sicher verwahren lassen",
-    "nach der Laufzeit liefern lassen, abholen oder zum Rückkauf anbieten",
+    "Physisches Gold kaufen",
+    "Je nach Modell sicher verwahren lassen",
+    "Nach der Laufzeit liefern lassen, abholen oder zum Rückkauf anbieten",
   ];
 
   return (
@@ -22,24 +22,17 @@ export default function Intro() {
           <div className="mt-8 h-1 w-20 rounded-full bg-[#d4af37]" />
 
           <p className="mt-10 text-xl leading-9 text-white/70">
-            Diese Webseite soll dir zuerst verständlich zeigen, worum es beim
-            Kauf von physischem Gold geht – ohne Druck, ohne Fachchinesisch und
-            ohne dass du sofort etwas entscheiden musst.
+            Diese Webseite zeigt dir einfach und verständlich, wie physisches
+            Gold und die verschiedenen Modelle funktionieren. So kannst du dir
+            in Ruhe ein eigenes Bild machen.
           </p>
         </div>
 
         <div className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-8 md:p-10">
           <p className="text-lg leading-8 text-white/65">
-            Im Mittelpunkt steht echtes Feingold. Du kannst Gold kaufen und je
-            nach gewähltem Modell wird es bis zum Ende der Laufzeit sicher
-            verwahrt. Während dieser Zeit gelten die jeweiligen Konditionen des
-            Modells.
-          </p>
-
-          <p className="mt-6 text-lg leading-8 text-white/65">
-            Nach Ablauf der Laufzeit entscheidest du selbst, wie es weitergeht.
-            Du kannst das Gold liefern lassen, persönlich abholen oder es zum
-            aktuellen Rückkaufspreis zum Verkauf anbieten.
+            Du kaufst physisches Gold. Je nach Modell unterscheiden sich
+            Laufzeit und Ablauf. Nach der Laufzeit entscheidest du selbst, wie
+            es weitergeht.
           </p>
 
           <div className="mt-9 grid gap-4">
