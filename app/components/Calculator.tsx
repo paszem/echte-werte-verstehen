@@ -61,13 +61,13 @@ export default function Calculator() {
       const advantage = price * 0.07;
 
       return {
-        label: "7 %-Modell",
-        description: "Beispiel mit direktem Preisvorteil.",
+        label: "Kurzfristiger Preisvorteil",
+        description: "Kauf mit Preisvorteil und 2 Monaten Laufzeit.",
         rows: [
           ["Grundpreis", chf(price)],
           ["7 % Preisvorteil", chf(advantage)],
           ["Beispiel-Kaufpreis", chf(price - advantage)],
-          ["Laufzeit", "Kurzfristiges Modell"],
+          ["Laufzeit", "2 Monate"],
         ],
         totalLabel: "Direkter Vorteil im Beispiel",
         total: chf(advantage),
@@ -79,12 +79,12 @@ export default function Calculator() {
     const loyalty = price * 0.36;
 
     return {
-      label: "2 %-Modell",
-      description: "Beispiel mit monatlichen Vorteilen auf Basis des Grundpreises.",
+      label: "Langfristiger Wertaufbau",
+      description: "Monatliche Vorteile über 36 Monate auf Basis des Grundpreises.",
       rows: [
         ["Grundpreis", chf(price)],
         ["2 % pro Monat", chf(monthly)],
-        ["36 Monate gesamt", chf(totalMonthly)],
+        ["Laufzeit", "36 Monate"],
         ["Treuerabatt", chf(loyalty)],
       ],
       totalLabel: "Gesamtvorteil im Beispiel",
@@ -101,12 +101,14 @@ export default function Calculator() {
           </p>
 
           <h2 className="mt-5 text-4xl font-bold leading-tight md:text-6xl">
-            Modelle einfach vergleichen.
+            Was möchtest du
+            <br />
+            besser verstehen?
           </h2>
 
           <p className="mt-7 text-lg leading-8 text-white/60">
-            Wähle eine Grösse und ein Modell. Die Werte werden in Schweizer
-            Franken angezeigt.
+            Wähle eine Grösse und vergleiche zwei mögliche Wege. Die Werte werden
+            live in Schweizer Franken angezeigt.
           </p>
 
           <div className="mt-10 rounded-3xl border border-white/10 bg-white/[0.03] p-6">
@@ -141,11 +143,13 @@ export default function Calculator() {
               }`}
             >
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
-                7 %-Modell
+                Kurzfristig
               </p>
-              <h3 className="mt-3 text-2xl font-semibold">Direkter Vorteil</h3>
+              <h3 className="mt-3 text-2xl font-semibold">
+                Preisvorteil verstehen
+              </h3>
               <p className="mt-3 leading-7 text-white/50">
-                Beispiel mit sofortigem Preisvorteil.
+                Kauf mit Preisvorteil • Laufzeit 2 Monate.
               </p>
             </button>
 
@@ -158,11 +162,13 @@ export default function Calculator() {
               }`}
             >
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
-                2 %-Modell
+                Langfristig
               </p>
-              <h3 className="mt-3 text-2xl font-semibold">Monatlich</h3>
+              <h3 className="mt-3 text-2xl font-semibold">
+                Werte aufbauen
+              </h3>
               <p className="mt-3 leading-7 text-white/50">
-                Beispiel mit monatlichen Vorteilen.
+                Monatliche Vorteile • Laufzeit 36 Monate.
               </p>
             </button>
           </div>
