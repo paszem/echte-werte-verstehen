@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="relative z-10 mx-auto grid min-h-[calc(100vh-6rem)] max-w-7xl items-center gap-16 md:grid-cols-[1fr_0.9fr]">
         <div>
           <p className="mb-8 text-sm font-semibold uppercase tracking-[0.45em] text-[#d4af37]">
-            Gold. Werterhalt. Einfach erklärt.
+            Physisches Gold einfach erklärt.
           </p>
 
           <h1 className="text-7xl font-bold leading-none tracking-[0.06em] md:text-9xl">
@@ -23,30 +23,30 @@ export default function Hero() {
           </h1>
 
           <p className="mt-7 text-lg tracking-[0.18em] text-[#d4af37]/80">
-            Klar. Ruhig. Übersichtlich.
+            Einfach. Verständlich. Ehrlich.
           </p>
 
           <p className="mt-10 max-w-2xl text-2xl font-light leading-10 text-white/75">
             <span className="font-medium text-white">
-              Ein klarer Überblick über Gold, Sachwerte und mögliche Wege.
+              Verstehe die Grundlagen und entdecke verschiedene Möglichkeiten.
             </span>
             <br />
-            Kurz erklärt, sauber aufgebaut und ohne unnötige Komplexität.
+            Kompakt erklärt, damit du dir in Ruhe ein eigenes Bild machen kannst.
           </p>
 
           <div className="mt-12 flex flex-col gap-4 sm:flex-row">
             <a
               className="rounded-full bg-[#d4af37] px-10 py-4 font-semibold text-black shadow-[0_0_70px_rgba(212,175,55,0.30)] transition hover:scale-105 hover:shadow-[0_0_95px_rgba(212,175,55,0.42)]"
-              href="#warum"
+              href="#worum"
             >
               Mehr erfahren
             </a>
 
             <a
               className="rounded-full border border-white/15 px-10 py-4 font-semibold text-white/85 transition hover:border-[#d4af37]/70 hover:bg-white/5"
-              href="#entdecken"
+              href="#rechner"
             >
-              Möglichkeiten entdecken
+              Rechner öffnen
             </a>
           </div>
         </div>
@@ -58,8 +58,8 @@ export default function Hero() {
 
           <div className="mt-10 space-y-6">
             {[
-              ["01", "Klar", "Die wichtigsten Punkte kompakt zusammengefasst."],
-              ["02", "Sachlich", "Keine Überladung. Nur Informationen mit Mehrwert."],
+              ["01", "Grundlagen", "Warum Gold für viele Menschen ein Thema ist."],
+              ["02", "Rechner", "Kurzfristige und langfristige Beispiele in CHF."],
               ["03", "Persönlich", "Bei Fragen kannst du dich direkt melden."],
             ].map(([n, title, text]) => (
               <div key={title} className="border-t border-white/10 pt-6">
