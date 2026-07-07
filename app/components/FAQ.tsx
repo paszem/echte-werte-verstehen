@@ -1,35 +1,23 @@
 const faqs = [
   [
-    "Was ist ECHTE WERTE?",
-    "ECHTE WERTE ist eine Informationsseite rund um physisches Gold, Kaufkraft und echte Sachwerte. Ziel ist nicht Druck, sondern Verständnis: Du sollst zuerst verstehen, worum es geht, und danach selbst entscheiden.",
-  ],
-  [
-    "Worum geht es konkret?",
-    "Es geht um den Kauf von physischem Feingold. Je nach Modell wird das Gold sicher verwahrt. Nach der Laufzeit kannst du es liefern lassen, abholen oder zum aktuellen Rückkaufspreis zum Verkauf anbieten.",
-  ],
-  [
-    "Warum beschäftigen sich Menschen mit Gold?",
-    "Viele Menschen sehen Gold als langfristigen Sachwert. Gold kann nicht einfach wie Papiergeld gedruckt werden und wird seit langer Zeit als Wertspeicher betrachtet.",
-  ],
-  [
-    "Was bedeutet Kaufkraft?",
-    "Der Geldbetrag bleibt gleich, aber was man dafür kaufen kann, verändert sich. Wenn Preise steigen, kann die Kaufkraft von Geld mit der Zeit sinken.",
-  ],
-  [
     "Woher kommen die Vorteile?",
-    "Die Vorteile entstehen nicht aus dem Nichts. Sie basieren auf dem Geschäftsmodell und der Wertschöpfung innerhalb der Lieferkette. Ein Teil dieser Wertschöpfung wird an Kunden weitergegeben.",
+    "Die Vorteile entstehen nicht aus dem Nichts. Sie basieren auf dem Geschäftsmodell und der Wertschöpfung innerhalb der Lieferkette. Ein Teil davon kann an Kunden weitergegeben werden.",
+  ],
+  [
+    "Kann ich mir das Gold liefern lassen?",
+    "Ja. Je nach gewähltem Modell kannst du nach Ablauf der Laufzeit entscheiden, ob du dir das Gold liefern lässt, es persönlich abholst oder zum aktuellen Rückkaufspreis zum Verkauf anbietest.",
   ],
   [
     "Ist das eine Beratung?",
-    "Nein. Die Inhalte dienen der Information und ersetzen keine Finanz-, Anlage-, Steuer- oder Rechtsberatung.",
+    "Nein. Diese Webseite dient der Information und ersetzt keine Finanz-, Anlage-, Steuer- oder Rechtsberatung.",
   ],
   [
-    "Muss ich sofort etwas entscheiden?",
-    "Nein. Nimm dir Zeit. Verstehen kommt zuerst – entscheiden kannst du später immer noch.",
+    "Sind die Berechnungen verbindlich?",
+    "Nein. Der Rechner dient als vereinfachtes Beispiel. Massgebend sind immer die aktuell gültigen Produktbedingungen.",
   ],
   [
     "Wie erfahre ich mehr?",
-    "Wenn dich ein Thema interessiert, kannst du unverbindlich Kontakt aufnehmen und deine Fragen persönlich stellen.",
+    "Wenn du Fragen hast oder etwas genauer verstehen möchtest, kannst du dich jederzeit unverbindlich bei mir melden.",
   ],
 ];
 
@@ -43,14 +31,11 @@ export default function FAQ() {
           </p>
 
           <h2 className="mt-5 text-4xl font-bold leading-tight md:text-6xl">
-            Antworten auf die
-            <br />
-            häufigsten Fragen.
+            Noch Fragen?
           </h2>
 
           <p className="mt-7 text-lg leading-8 text-white/60">
-            Die meisten Fragen tauchen bei fast allen am Anfang auf. Deshalb
-            findest du hier die wichtigsten Antworten auf einen Blick.
+            Hier findest du die wichtigsten Antworten auf einen Blick.
           </p>
         </div>
 
@@ -60,9 +45,9 @@ export default function FAQ() {
               key={question}
               className="group rounded-3xl border border-white/10 bg-white/[0.035] p-6 transition hover:border-[#d4af37]/40"
             >
-              <summary className="cursor-pointer list-none text-xl font-semibold text-white flex items-center justify-between">
+              <summary className="flex cursor-pointer list-none items-center justify-between text-xl font-semibold text-white">
                 <span>{question}</span>
-                <span className="text-[#d4af37] transition group-open:rotate-45 text-2xl">
+                <span className="text-2xl text-[#d4af37] transition group-open:rotate-45">
                   +
                 </span>
               </summary>

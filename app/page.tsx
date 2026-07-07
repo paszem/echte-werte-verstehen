@@ -14,7 +14,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Intro />
-      <GoldKnowledge />
+      {/* <GoldKnowledge /> */}
       <Calculator />
       <Stats />
       <FAQ />

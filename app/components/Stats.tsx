@@ -37,17 +37,23 @@ export default function Stats() {
               ? "Live"
               : visitors.toLocaleString("de-CH") + "+"}
           </p>
-          <p className="mt-3 text-white/55">Besucher insgesamt</p>
+          <p className="mt-3 text-white/55">
+            Besucher haben sich bereits informiert
+          </p>
         </div>
 
         <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8">
           <p className="text-4xl font-semibold text-[#d4af37]">CHF</p>
-          <p className="mt-3 text-white/55">Rechner mit Schweizer Franken</p>
+          <p className="mt-3 text-white/55">
+            Rechner mit Schweizer Franken
+          </p>
         </div>
 
         <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8">
           <p className="text-4xl font-semibold text-[#d4af37]">Live</p>
-          <p className="mt-3 text-white/55">Goldpreise automatisch geladen</p>
+          <p className="mt-3 text-white/55">
+            Goldpreise automatisch geladen
+          </p>
         </div>
       </div>
     </section>

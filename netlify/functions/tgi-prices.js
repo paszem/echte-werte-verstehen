@@ -5,6 +5,11 @@ function parseEuro(value) {
   return Number(value.replace(/\./g, "").replace(",", "."));
 }
 
+function parseGrams(value, unit) {
+  const number = Number(value.replace(/\./g, "").replace(",", "."));
+  return unit.toLowerCase().includes("kilo") ? String(number * 1000) : String(number);
+}
+
 function cleanText(html) {
   return html
     .replace(/<script[\s\S]*?<\/script>/gi, " ")
@@ -17,15 +22,24 @@ function cleanText(html) {
 function extractPrices(html) {
   const text = cleanText(html);
   const prices = {};
-  const regex = /\|\s*(\d+)\s*Gramm\s*-\s*7%\s*([\d.]+,\d{2})\s*€/g;
+
+  const regex =
+    /\|\s*([\d.,]+)\s*(Gramm|Kilogramm|kg|g)\s*-\s*7%\s*([\d.]+,\d{2})\s*€/gi;
 
   let match;
 
   while ((match = regex.exec(text)) !== null) {
-    prices[match[1]] = parseEuro(match[2]);
+    const grams = parseGrams(match[1], match[2]);
+    prices[grams] = parseEuro(match[3]);
   }
 
-  return prices;
+  const order = ["1", "2", "5", "10", "20", "50", "100", "250", "500", "1000"];
+
+  return Object.fromEntries(
+    order
+      .filter((grams) => prices[grams])
+      .map((grams) => [grams, prices[grams]])
+  );
 }
 
 exports.handler = async function () {
