@@ -9,7 +9,7 @@ const steps = [
   },
   {
     title: "Modell wählen",
-    text: "Je nach Modell unterscheiden sich Laufzeit, Verwahrung und Vorteile.",
+    text: "Je nach Produkt unterscheiden sich Laufzeit, Verwahrung und Vorteile.",
   },
   {
     title: "Am Ende entscheiden",
