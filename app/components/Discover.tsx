@@ -13,7 +13,7 @@ const items: Item[] = [
   {
     title: "Kurzfristiger Preisvorteil",
     eyebrow: "2 Monate",
-    text: "Beim kurzfristigen Modell steht der direkte Preisvorteil im Mittelpunkt.",
+    text: "Beim kurzfristigen Produkt steht der direkte Preisvorteil im Mittelpunkt.",
     detail:
       "Du kaufst physisches Gold mit einem Preisvorteil. Nach der Laufzeit kannst du je nach Modell entscheiden, ob du dir das Gold liefern lässt, es persönlich abholst oder zum aktuellen Rückkaufspreis zum Verkauf anbietest. Der Rechner zeigt dir ein vereinfachtes Beispiel dazu.",
   },
@@ -27,9 +27,9 @@ const items: Item[] = [
   {
     title: "So funktioniert der Ablauf",
     eyebrow: "Einfach erklärt",
-    text: "Gold kaufen, Modell wählen, Laufzeit abwarten und am Ende entscheiden.",
+    text: "Gold kaufen, Produkt wählen, Laufzeit abwarten und am Ende entscheiden.",
     detail:
-      "Der Ablauf besteht im Grundsatz aus wenigen Schritten: Du wählst physisches Gold, entscheidest dich für ein Modell, lässt es je nach Modell während der Laufzeit verwahren und entscheidest danach, wie es weitergeht.",
+      "Der Ablauf besteht im Grundsatz aus wenigen Schritten: Du wählst physisches Gold, entscheidest dich für ein Produkt, lässt es je nach Produkt während der Laufzeit verwahren und entscheidest danach, wie es weitergeht.",
   },
   {
     title: "Nach der Laufzeit",
@@ -43,7 +43,7 @@ const items: Item[] = [
     eyebrow: "Geschäftsmodell",
     text: "Die Vorteile entstehen durch das Geschäftsmodell und die Wertschöpfung.",
     detail:
-      "Die Vorteile entstehen nicht aus dem Nichts. Sie basieren auf dem Geschäftsmodell und der Wertschöpfung innerhalb der Lieferkette. Ein Teil davon kann an Kunden weitergegeben werden. Entscheidend sind immer das gewählte Modell, die Laufzeit und die gültigen Bedingungen.",
+      "Die Vorteile entstehen nicht aus dem Nichts. Sie basieren auf dem Geschäftsmodell und der Wertschöpfung innerhalb der Lieferkette. Ein Teil davon kann an Kunden weitergegeben werden. Entscheidend sind immer das gewählte Produkt, die Laufzeit und die gültigen Bedingungen.",
   },
 ];
 
