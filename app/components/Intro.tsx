@@ -38,13 +38,13 @@ export default function Intro() {
 
           <p className="mt-10 text-xl leading-9 text-white/70">
             Diese Webseite zeigt kompakt, wie physisches Gold und die
-            verschiedenen Modelle funktionieren.
+            verschiedenen Produktefunktionieren.
           </p>
         </div>
 
         <div className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-8 md:p-10">
           <p className="text-lg leading-8 text-white/65">
-            Du kaufst physisches Gold. Je nach Modell unterscheiden sich
+            Du kaufst physisches Gold. Je nach Produkt unterscheiden sich
             Laufzeit und Ablauf. Nach der Laufzeit entscheidest du, wie es
             weitergeht.
           </p>
