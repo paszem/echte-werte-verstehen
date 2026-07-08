@@ -143,7 +143,7 @@ export default function Discover() {
               </p>
               <p className="mt-3 leading-7 text-white/55">
                 Diese Informationen dienen zur Orientierung. Entscheidend sind
-                immer die gültigen Bedingungen des jeweiligen Modells.
+                immer die gültigen Bedingungen des jeweiligen Produkts.
               </p>
             </div>
           </div>
