@@ -11,46 +11,39 @@ type Item = {
 
 const items: Item[] = [
   {
-    title: "Vorteile verstehen",
-    eyebrow: "Woher kommt das?",
-    text: "Warum entstehen Vorteile und weshalb sollte man den Ablauf genau verstehen?",
+    title: "Kurzfristiger Preisvorteil",
+    eyebrow: "2 Monate",
+    text: "Beim kurzfristigen Modell steht der direkte Preisvorteil im Mittelpunkt.",
     detail:
-      "Vorteile entstehen nicht einfach aus dem Nichts. Sie basieren auf dem Geschäftsmodell und der Wertschöpfung innerhalb der Lieferkette. Ein Teil davon kann an Kunden weitergegeben werden. Wichtig ist, immer das gewählte Modell, die Laufzeit und die Bedingungen zu verstehen.",
+      "Du kaufst physisches Gold mit einem Preisvorteil. Nach der Laufzeit kannst du je nach Modell entscheiden, ob du dir das Gold liefern lässt, es persönlich abholst oder zum aktuellen Rückkaufspreis zum Verkauf anbietest. Der Rechner zeigt dir ein vereinfachtes Beispiel dazu.",
   },
   {
-    title: "Physisches Gold",
-    eyebrow: "Was kaufe ich?",
-    text: "Es geht nicht um Zahlen auf einem Bildschirm, sondern um echtes Feingold.",
+    title: "Langfristiger Wertaufbau",
+    eyebrow: "Zukunft",
+    text: "Wer langfristig denkt, kann Schritt für Schritt echte Werte aufbauen.",
     detail:
-      "Im Mittelpunkt steht physisches Feingold. Je nach gewähltem Modell wird es bis zum Ende der Laufzeit sicher verwahrt. Danach entscheidest du, ob du es liefern lassen, abholen oder zum aktuellen Rückkaufspreis zum Verkauf anbieten möchtest.",
+      "Ein möglicher Ansatz ist, erhaltene Vorteile nicht direkt auszugeben, sondern sie später wieder für den Kauf von physischem Gold zu nutzen. So kann der Goldbestand mit der Zeit Schritt für Schritt wachsen. Wie dieser Weg aussieht, entscheidet jeder selbst und richtet sich nach den eigenen Zielen sowie dem gewählten Modell.",
   },
   {
-    title: "Kaufkraft & Werte",
-    eyebrow: "Langfristig denken",
-    text: "Warum viele Menschen nicht nur Geld sparen, sondern echte Werte verstehen möchten.",
+    title: "So funktioniert der Ablauf",
+    eyebrow: "Einfach erklärt",
+    text: "Gold kaufen, Modell wählen, Laufzeit abwarten und am Ende entscheiden.",
     detail:
-      "Geld auf dem Konto bleibt zwar derselbe Betrag. Entscheidend ist aber, was man sich später noch dafür leisten kann. Deshalb beschäftigen sich viele Menschen mit Sachwerten wie Gold, um das Thema Kaufkraft langfristig besser zu verstehen.",
+      "Der Ablauf besteht im Grundsatz aus wenigen Schritten: Du wählst physisches Gold, entscheidest dich für ein Modell, lässt es je nach Modell während der Laufzeit verwahren und entscheidest danach, wie es weitergeht.",
   },
   {
-    title: "Inflation einfach erklärt",
-    eyebrow: "Alltag",
-    text: "Warum Dinge teurer werden können und was das mit deinem Geld macht.",
+    title: "Nach der Laufzeit",
+    eyebrow: "Deine Möglichkeiten",
+    text: "Am Ende entscheidest du, ob Lieferung, Abholung oder Rückkauf passt.",
     detail:
-      "Inflation bedeutet vereinfacht: Viele Preise steigen über längere Zeit. Dadurch kann derselbe Geldbetrag weniger kaufen als früher. Genau deshalb ist Kaufkraft ein wichtiges Thema, wenn man langfristig denkt.",
+      "Nach Ablauf der Laufzeit kannst du dein Gold je nach Modell liefern lassen, persönlich abholen oder zum aktuellen Rückkaufspreis zum Verkauf anbieten. So bleibt der nächste Schritt offen und richtet sich nach deiner Situation.",
   },
   {
-    title: "Am Ende der Laufzeit",
-    eyebrow: "Flexibilität",
-    text: "Liefern lassen, abholen oder zum Rückkauf anbieten – du entscheidest den nächsten Schritt.",
+    title: "Woher kommen die Vorteile?",
+    eyebrow: "Geschäftsmodell",
+    text: "Die Vorteile entstehen durch das Geschäftsmodell und die Wertschöpfung.",
     detail:
-      "Nach Ablauf der Laufzeit gibt es je nach Modell verschiedene Möglichkeiten. Du kannst dein physisches Gold liefern lassen, es persönlich abholen oder es zum aktuellen Rückkaufspreis zum Verkauf anbieten. So versteht man den Ablauf bis zum Schluss.",
-  },
-  {
-    title: "Persönlich fragen",
-    eyebrow: "Direkt klären",
-    text: "Wenn etwas unklar ist, lässt es sich oft persönlich schneller erklären.",
-    detail:
-      "Bei Fragen zum Ablauf, Dashboard, Ein- und Auszahlungen, Lieferungen oder Registrierung kannst du dich persönlich melden. Ich teile gerne meine eigenen Erfahrungen.",
+      "Die Vorteile entstehen nicht aus dem Nichts. Sie basieren auf dem Geschäftsmodell und der Wertschöpfung innerhalb der Lieferkette. Ein Teil davon kann an Kunden weitergegeben werden. Entscheidend sind immer das gewählte Modell, die Laufzeit und die gültigen Bedingungen.",
   },
 ];
 
@@ -81,14 +74,14 @@ export default function Discover() {
             </p>
 
             <h2 className="mt-5 text-4xl font-bold leading-tight md:text-6xl">
-              Öffne nur,
+              Kurzfristig.
               <br />
-              was dich interessiert.
+              Langfristig.
             </h2>
 
             <p className="mt-7 text-lg leading-8 text-white/60">
-              Die wichtigsten Themen bleiben bewusst übersichtlich. Wenn dich
-              etwas mehr interessiert, kannst du es öffnen und in Ruhe lesen.
+              Hier findest du die wichtigsten Möglichkeiten kompakt erklärt.
+              Details öffnest du nur, wenn du mehr wissen möchtest.
             </p>
           </div>
 
@@ -149,9 +142,8 @@ export default function Discover() {
                 Hinweis
               </p>
               <p className="mt-3 leading-7 text-white/55">
-                Diese Informationen dienen zur Orientierung. Eine Entscheidung
-                sollte immer in Ruhe und auf Basis der gültigen Bedingungen
-                getroffen werden.
+                Diese Informationen dienen zur Orientierung. Entscheidend sind
+                immer die gültigen Bedingungen des jeweiligen Modells.
               </p>
             </div>
           </div>

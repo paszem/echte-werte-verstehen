@@ -1,6 +1,7 @@
 import About from "./components/About";
 import Calculator from "./components/Calculator";
 import Contact from "./components/Contact";
+import Discover from "./components/Discover";
 import GoldKnowledge from "./components/GoldKnowledge";
 import FAQ from "./components/FAQ";
 import Hero from "./components/Hero";
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <Intro />
       {/* <GoldKnowledge /> */}
+      <Discover />
       <Calculator />
       <Stats />
       <FAQ />
