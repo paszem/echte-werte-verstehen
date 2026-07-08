@@ -8,7 +8,7 @@ const steps = [
     text: "Du kaufst physisches Gold und wählst die gewünschte Menge.",
   },
   {
-    title: "Modell wählen",
+    title: "Produkt wählen",
     text: "Je nach Produkt unterscheiden sich Laufzeit, Verwahrung und Vorteile.",
   },
   {
