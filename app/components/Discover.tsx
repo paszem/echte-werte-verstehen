@@ -22,7 +22,7 @@ const items: Item[] = [
     eyebrow: "Zukunft",
     text: "Wer langfristig denkt, kann Schritt für Schritt echte Werte aufbauen.",
     detail:
-      "Ein möglicher Ansatz ist, erhaltene Vorteile nicht direkt auszugeben, sondern sie später wieder für den Kauf von physischem Gold zu nutzen. So kann der Goldbestand mit der Zeit Schritt für Schritt wachsen. Wie dieser Weg aussieht, entscheidet jeder selbst und richtet sich nach den eigenen Zielen sowie dem gewählten Modell.",
+      "Ein möglicher Ansatz ist, erhaltene Vorteile nicht direkt auszugeben, sondern sie später wieder für den Kauf von physischem Gold zu nutzen. So kann der Goldbestand mit der Zeit Schritt für Schritt wachsen. Wie dieser Weg aussieht, entscheidet jeder selbst und richtet sich nach den eigenen Zielen sowie dem gewählten Produkt.",
   },
   {
     title: "So funktioniert der Ablauf",
