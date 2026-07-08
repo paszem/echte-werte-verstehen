@@ -38,7 +38,7 @@ export default function Intro() {
 
           <p className="mt-10 text-xl leading-9 text-white/70">
             Diese Webseite zeigt kompakt, wie physisches Gold und die
-            verschiedenen Produktefunktionieren.
+            verschiedenen Produkte funktionieren.
           </p>
         </div>
 
