@@ -5,7 +5,7 @@ const faqs = [
   ],
   [
     "Kann ich mir das Gold liefern lassen?",
-    "Ja. Je nach gewähltem Modell kannst du nach Ablauf der Laufzeit entscheiden, ob du dir das Gold liefern lässt, es persönlich abholst oder zum aktuellen Rückkaufspreis zum Verkauf anbietest.",
+    "Ja. Je nach gewähltem Produkt kannst du nach Ablauf der Laufzeit entscheiden, ob du dir das Gold liefern lässt, es persönlich abholst oder zum aktuellen Rückkaufspreis zum Verkauf anbietest.",
   ],
   [
     "Ist das eine Beratung?",
