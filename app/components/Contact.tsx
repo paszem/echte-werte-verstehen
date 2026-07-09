@@ -21,15 +21,20 @@ export default function Contact() {
           </p>
 
           <p className="mt-5 leading-8 text-white/60">
-            Ich nutze das System selbst und teile gerne meine persönlichen
-            Erfahrungen zum Dashboard, Ablauf, Lieferungen, Gutscheinen,
-            Registrierung sowie Ein- und Auszahlungen.
+            Ich habe mich selbst bewusst für diesen Weg entschieden und nutze
+            dieses Produkt persönlich. Gerne teile ich meine Erfahrungen zum
+            Ablauf, Dashboard, Lieferungen, Gutscheinen, der Registrierung sowie
+            Ein- und Auszahlungen. Mein Ziel ist es, das Thema einfach und
+            verständlich zu erklären, damit du dir in Ruhe deine eigene Meinung
+            bilden kannst.
           </p>
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href="https://wa.me/41797541646"
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-[#d4af37] px-10 py-4 font-semibold text-black transition hover:scale-105"
           >
             WhatsApp schreiben
