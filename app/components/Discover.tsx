@@ -81,7 +81,7 @@ export default function Discover() {
 
             <p className="mt-7 text-lg leading-8 text-white/60">
               Hier findest du die wichtigsten Möglichkeiten kompakt erklärt.
-              Details öffnest du nur, wenn du mehr wissen möchtest.
+              
             </p>
           </div>
 
