@@ -11,8 +11,7 @@ export default function Contact() {
         </h2>
 
         <p className="mx-auto mt-7 max-w-2xl text-center text-lg leading-8 text-white/60">
-          Wenn nach dem Lesen noch etwas unklar ist, kannst du dich jederzeit
-          unverbindlich bei mir melden.
+          
         </p>
 
         <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-white/10 bg-black/25 p-7">
