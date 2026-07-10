@@ -1,12 +1,18 @@
+import Image from "next/image";
+
 export default function About() {
   return (
     <section className="border-y border-white/10 bg-white/[0.025]">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-28 md:grid-cols-[0.8fr_1.2fr]">
-        <div className="grid min-h-80 place-items-center rounded-[2rem] border border-[#d4af37]/20 bg-black/30 text-center">
-          <div>
-            <p className="text-4xl font-semibold text-[#d4af37]">Pascal</p>
-            <p className="mt-3 text-white/45">Foto folgt</p>
-          </div>
+        <div className="overflow-hidden rounded-[2rem] border border-[#d4af37]/20 bg-black/30">
+          <Image
+            src="/pascal.png"
+            alt="Pascal"
+            width={700}
+            height={900}
+            className="h-full w-full object-cover"
+            priority
+          />
         </div>
 
         <div>
