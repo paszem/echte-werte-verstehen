@@ -8,6 +8,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Stats from "./components/Stats";
 import Intro from "./components/Intro";
+import Recommendation from "./components/Recommendation";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Stats />
       <FAQ />
       <About />
+      <Recommendation />
       <Contact />
     </main>
   );
