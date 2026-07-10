@@ -13,30 +13,37 @@ const topics: Topic[] = [
   {
     title: "Warum Gold?",
     eyebrow: "Sachwert",
-    text: "Gold gilt seit langer Zeit als realer Sachwert und kann nicht beliebig vermehrt werden.",
+    text: "Gold ist ein physischer Sachwert und kann nicht beliebig vermehrt werden.",
     detail:
-      "Gold ist physisch vorhanden und weltweit bekannt. Viele Menschen betrachten es deshalb als langfristigen Wertspeicher und als Ergänzung zu Geld auf dem Konto.",
+      "Gold wird seit langer Zeit als Wertspeicher geschätzt. Es ist physisch vorhanden, weltweit bekannt und nur begrenzt verfügbar. Viele Menschen betrachten Gold deshalb als langfristige Ergänzung zu Geld auf dem Konto.",
   },
   {
     title: "Kaufkraft",
     eyebrow: "Einfach erklärt",
-    text: "Entscheidend ist nicht nur, wie viel Geld du hast, sondern was du dir später dafür leisten kannst.",
+    text: "Entscheidend ist nicht nur, wie viel Geld du hast, sondern was du dir später damit leisten kannst.",
     detail:
-      "Zehn Franken bleiben zehn Franken. Wenn aber Preise steigen, bekommst du später vielleicht weniger dafür. Genau darum geht es beim Thema Kaufkraft.",
+      "Kaufkraft beschreibt, wie viele Waren und Dienstleistungen du für dein Geld erhältst. Der Geldbetrag kann gleich bleiben, während die Preise steigen. Wenn ein Einkauf heute 100 CHF kostet und später teurer wird, reichen dieselben 100 CHF möglicherweise nicht mehr aus.",
   },
   {
     title: "Inflation",
     eyebrow: "Preise & Geldwert",
     text: "Steigen Preise über längere Zeit, kann derselbe Geldbetrag weniger kaufen als früher.",
     detail:
-      "Inflation bedeutet vereinfacht: Viele Dinge werden mit der Zeit teurer. Deshalb beschäftigen sich Menschen mit Sachwerten, die langfristig Bestand haben können.",
+      "Inflation bedeutet vereinfacht, dass viele Produkte und Dienstleistungen mit der Zeit teurer werden. Dadurch verliert Geld einen Teil seiner Kaufkraft. Genau deshalb beschäftigen sich viele Menschen mit Werterhalt und realen Sachwerten.",
   },
   {
     title: "Zentralbanken",
-    eyebrow: "Vertrauen",
-    text: "Viele Zentralbanken halten Goldreserven. Das zeigt die weltweite Bedeutung von Gold.",
+    eyebrow: "Weltweite Bedeutung",
+    text: "Viele Zentralbanken halten Goldreserven als Teil ihrer Währungsreserven.",
     detail:
-      "Auch Zentralbanken nutzen Gold als Reserve. Das zeigt, dass Gold weltweit weiterhin als wichtiger Wert- und Vertrauensanker betrachtet wird.",
+      "Zentralbanken halten Gold als langfristige Reserve. Das zeigt, dass Gold weltweit weiterhin eine bedeutende Rolle spielt und auch von grossen Institutionen als Wert- und Vertrauensanker betrachtet wird.",
+  },
+  {
+    title: "Gold und Geld",
+    eyebrow: "Der Unterschied",
+    text: "Geld ist wichtig für den Alltag. Gold wird häufig als langfristige Ergänzung betrachtet.",
+    detail:
+      "Geld eignet sich für Zahlungen, Rücklagen und den täglichen Gebrauch. Gold ist kein Ersatz dafür. Es wird von vielen Menschen ergänzend genutzt, weil es physisch vorhanden und begrenzt ist und langfristig dem Werterhalt dienen kann.",
   },
 ];
 
@@ -51,11 +58,17 @@ export default function GoldKnowledge() {
     }
 
     window.addEventListener("keydown", closeWithEscape);
-    return () => window.removeEventListener("keydown", closeWithEscape);
+
+    return () => {
+      window.removeEventListener("keydown", closeWithEscape);
+    };
   }, []);
 
   return (
-    <section id="wissen" className="border-y border-white/10 bg-white/[0.025]">
+    <section
+      id="wissen"
+      className="border-y border-white/10 bg-white/[0.025]"
+    >
       <div className="mx-auto max-w-7xl px-6 py-28">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
@@ -70,8 +83,8 @@ export default function GoldKnowledge() {
             </h2>
 
             <p className="mt-7 text-lg leading-8 text-white/60">
-              Bevor du verschiedene Modelle vergleichst, lohnt sich ein kurzer
-              Blick auf die wichtigsten Grundlagen.
+              Ein kurzer Überblick über Gold, Kaufkraft und Inflation – einfach
+              und verständlich erklärt.
             </p>
           </div>
 
@@ -79,6 +92,7 @@ export default function GoldKnowledge() {
             {topics.map((topic) => (
               <button
                 key={topic.title}
+                type="button"
                 onClick={() => setActive(topic)}
                 className="group rounded-3xl border border-white/10 bg-black/30 p-7 text-left transition hover:border-[#d4af37]/45 hover:bg-white/[0.05]"
               >
@@ -111,6 +125,8 @@ export default function GoldKnowledge() {
             onClick={(event) => event.stopPropagation()}
           >
             <button
+              type="button"
+              aria-label="Fenster schliessen"
               onClick={() => setActive(null)}
               className="absolute right-6 top-6 grid h-10 w-10 place-items-center rounded-full border border-white/10 text-white/70 transition hover:border-[#d4af37]/50 hover:text-white"
             >
