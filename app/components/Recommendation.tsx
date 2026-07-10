@@ -26,8 +26,7 @@ export default function Recommendation() {
 
         <p className="mt-6 max-w-4xl text-lg leading-8 text-white/65">
           Deshalb empfehle ich, sich in Ruhe mit dem Thema zu beschäftigen,
-          Fragen zu stellen und sich ein eigenes Bild zu machen. Meine
-          persönlichen Erfahrungen teile ich gerne – die Entscheidung trifft
+          Fragen zu stellen und sich ein eigenes Bild zu machen – die Entscheidung trifft
           am Ende jeder selbst.
         </p>
 
