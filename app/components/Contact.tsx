@@ -21,12 +21,7 @@ export default function Contact() {
           </p>
 
           <p className="mt-5 leading-8 text-white/60">
-            Ich habe mich selbst bewusst für diesen Weg entschieden und nutze
-            dieses Produkt persönlich. Gerne teile ich meine Erfahrungen zum
-            Ablauf, Dashboard, Lieferungen, Gutscheinen, der Registrierung sowie
-            Ein- und Auszahlungen. Mein Ziel ist es, das Thema einfach und
-            verständlich zu erklären, damit du dir in Ruhe deine eigene Meinung
-            bilden kannst.
+            Gerne teile ich meine persönlichen Erfahrungen und beantworte Fragen zum Ablauf, Dashboard, Registrierung, Lieferungen, Gutscheinen sowie Ein- und Auszahlungen – einfach, verständlich und unverbindlich.
           </p>
         </div>
 
