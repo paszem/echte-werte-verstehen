@@ -29,7 +29,6 @@ export default function Recommendation() {
 
         <div className="mt-9 rounded-3xl border border-[#d4af37]/20 bg-[#d4af37]/10 p-6">
           <p className="text-xl font-semibold text-white">
-            *Abschlusssatz*
              Mein Tip, meine Empfehlung = Denke nicht kurzfristig, sondern nutze Schritt für Schritt echte Werte und finanzielle Sicherheiten.
              #Gold mit Rabatt#
           </p>
