@@ -18,22 +18,20 @@ export default function Recommendation() {
         </p>
 
         <p className="mt-6 max-w-4xl text-lg leading-8 text-white/65">
-          Je nach Produkt kann ich von den vorgesehenen Vorteilen profitieren.
-          Ein möglicher langfristiger Ansatz ist, erhaltene Vorteile später
-          wieder für den Kauf von physischem Gold zu nutzen. So kann der
-          Goldbestand Schritt für Schritt wachsen.
+          Je nach gewähltem Produkt, kannst du von verschiedenen vorgesehenen Vorteilen profitieren.
+          Viele nutzen diese Vorteile als Chance, ihren Bestand an Physischem Gold, Schritt für Schritt auszubauen. Durch konsequentes Handeln und einen langfristigen Ansatz, kann so über den Faktor Zeit, ein wertvoller Goldbestand entstehen.
+          Gold steht seit Generationen für Werterhalt und Stabilität. Deshalb lohnt es sich, frühzeitig an morgen zu denken und mit echten Sachwerten eine solide Grundlage für die Zukunft zu schaffen.
         </p>
 
         <p className="mt-6 max-w-4xl text-lg leading-8 text-white/65">
-          Deshalb empfehle ich, sich in Ruhe mit dem Thema zu beschäftigen,
-          Fragen zu stellen und sich ein eigenes Bild zu machen – die Entscheidung trifft
-          am Ende jeder selbst.
+          Nimm dir die Zeit, dich unverbindlich zu informieren. Stelle deine Fragen, lerne das Konzept kennen und entscheide erst, wenn du vollständig überzeugt bist. Eine gut informierte Entscheidung ist die beste Grundlage für langfristigen Erfolg.
         </p>
 
         <div className="mt-9 rounded-3xl border border-[#d4af37]/20 bg-[#d4af37]/10 p-6">
           <p className="text-xl font-semibold text-white">
-            Nicht kurzfristig denken – sondern Schritt für Schritt Werte für
-            die Zukunft aufbauen.
+            *Abschlusssatz*
+             Mein Tip, meine Empfehlung = Denke nicht kurzfristig, sondern nutze Schritt für Schritt echte Werte und finanzielle Sicherheiten.
+             #Gold mit Rabatt#
           </p>
         </div>
       </div>
