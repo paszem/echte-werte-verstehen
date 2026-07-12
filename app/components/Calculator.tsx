@@ -80,7 +80,8 @@ export default function Calculator() {
 
     return {
       label: "Langfristiger Wertaufbau",
-      description: "Monatliche Vorteile über 36 Monate auf Basis des Grundpreises.",
+      description:
+        "Monatliche Vorteile über 36 Monate auf Basis des Grundpreises.",
       rows: [
         ["Grundpreis", chf(price)],
         ["2 % pro Monat", chf(monthly)],
@@ -145,9 +146,11 @@ export default function Calculator() {
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
                 Kurzfristig
               </p>
+
               <h3 className="mt-3 text-2xl font-semibold">
                 Preisvorteil verstehen
               </h3>
+
               <p className="mt-3 leading-7 text-white/50">
                 Kauf mit Preisvorteil • Laufzeit 2 Monate.
               </p>
@@ -164,9 +167,9 @@ export default function Calculator() {
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
                 Langfristig
               </p>
-              <h3 className="mt-3 text-2xl font-semibold">
-                Werte aufbauen
-              </h3>
+
+              <h3 className="mt-3 text-2xl font-semibold">Werte aufbauen</h3>
+
               <p className="mt-3 leading-7 text-white/50">
                 Monatliche Vorteile • Laufzeit 36 Monate.
               </p>
@@ -196,9 +199,11 @@ export default function Calculator() {
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-white/45">
                 Auswahl
               </p>
+
               <p className="mt-4 text-3xl font-semibold text-[#d4af37]">
                 {grams} g Gold
               </p>
+
               <p className="mt-2 text-white/50">{result.label}</p>
             </div>
           </div>
@@ -207,6 +212,7 @@ export default function Calculator() {
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
               {result.label}
             </p>
+
             <p className="mt-3 leading-7 text-white/55">
               {result.description}
             </p>
@@ -228,10 +234,33 @@ export default function Calculator() {
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
               {result.totalLabel}
             </p>
+
             <p className="mt-4 text-5xl font-bold tracking-tight text-white">
               {result.total}
             </p>
           </div>
+
+          {model === "monthly" && (
+            <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af37]">
+                Monatliche Vorteile
+              </p>
+
+              <p className="mt-3 leading-7 text-white/60">
+                Die vorgesehenen monatlichen Vorteile werden deinem
+                persönlichen Dashboard gutgeschrieben. Dort kannst du alle
+                Gutschriften jederzeit transparent einsehen und den Verlauf
+                Schritt für Schritt verfolgen.
+              </p>
+
+              <p className="mt-4 leading-7 text-white/60">
+                Ab einem verfügbaren Guthaben von{" "}
+                <strong className="text-white">30 CHF</strong> können die
+                Vorteile ausbezahlt oder für den weiteren Aufbau von physischem
+                Gold verwendet werden.
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </section>
